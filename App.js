@@ -2,6 +2,8 @@ import { StyleSheet } from "react-native";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import MergeNavigator from "./Navigation/MergeNavigators";
+
+
 const App = () => {
   // const navigation = useNavigation();
   return (

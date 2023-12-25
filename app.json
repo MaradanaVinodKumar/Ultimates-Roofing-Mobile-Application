@@ -12,7 +12,7 @@
     "icon": "./assets/UltimatesLogo.png",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/UltimatesLogoGif2.gif",
+      "image": "./assets/UltimatesLogo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -26,7 +26,7 @@
     "android": {
       "icon": "./assets/UltimatesLogo.png",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/UltimatesLogoGif2.gif",
+        "foregroundImage": "./assets/UltimatesLogo.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.viswa_aditya.ultimatesroofingsolutionapplication"

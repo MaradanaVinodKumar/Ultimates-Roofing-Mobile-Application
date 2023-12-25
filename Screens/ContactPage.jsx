@@ -14,36 +14,28 @@ import roof from "../assets/AboutPageImages/roof.jpg";
 import Footer from "../Components/Footer";
 import Cards3 from "../Components/Cards3";
 import FormContact from "../Components/FormContact";
+import SidePointNavigation from "../Components/SidePointNavigation";
+import Header from "../Screens/Header";
 
 export default function ContactPage() {
   const navigation = useNavigation();
   return (
     <SafeAreaView>
-      <View style={styles.sidePoint}>
-        <TouchableOpacity>
-          <MaterialIcons
-            name="request-quote"
-            size={34}
-            color="white"
-            onPress={() => {
-              navigation.navigate("quote");
-            }}
-          />
-        </TouchableOpacity>
-      </View>
+      <Header button={false} />
+      {/* <SidePointNavigation /> */}
       <ScrollView>
-        <View style={{ flex: 1 }}>
+        {/* <View style={{ flex: 1 }}>
           <Text style={styles.textAboveImage}>Ultimates ROOFING & SIDING</Text>
           <Text style={styles.textAboveImage2}>CONTACT US</Text>
           <Image source={roof} style={styles.roof} />
-        </View>
-        <View>
+        </View> */}
+        {/* <View>
           <Cards3 />
-        </View>
+        </View> */}
         <View>
           <FormContact />
         </View>
-        <Footer />
+        {/* <Footer /> */}
       </ScrollView>
     </SafeAreaView>
   );
@@ -54,18 +46,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flex: 1,
-  },
-  sidePoint: {
-    height: 60,
-    width: 50,
-    backgroundColor: "black",
-    top: 380,
-    right: 0,
-    position: "absolute",
-    zIndex: 1,
-    borderTopLeftRadius: 30,
-    borderBottomLeftRadius: 30,
-    padding: 11,
   },
   roof: {
     height: 200,

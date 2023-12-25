@@ -1,18 +1,28 @@
 import React from "react";
-import { View, StyleSheet, Dimensions, Image, Text } from "react-native";
-import ViewSlider from "react-native-view-slider";
-// import { SliderBox } from "react-native-image-slider-box";
-// const { width, height } = Dimensions.get('window');
+import { View, StyleSheet, Dimensions, Image, Text, FlatList } from "react-native";
 export default function TextCarousal() {
 
-    const images = [
-        require("../assets/CarouselImages/c1.jpeg"),
-        require("../assets/CarouselImages/c2.jpeg"),
-        require("../assets/CarouselImages/c3.jpeg"),
-        require("../assets/CarouselImages/c4.jpeg"),
+    const data = [
+        { key: '1', content: <CustomView1 /> },
+        { key: '2', content: <CustomView2 /> },
+        { key: '3', content: <CustomView3 /> },
+        // Add more views as needed
     ];
 
     return (
+        <>
+            <FlatList
+                data={data}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                keyExtractor={(item) => item.key}
+                renderItem={({ item }) => (
+                    <View style={styles.viewContainer}>
+                        {item.content}
+                    </View>
+                )}
+            />
+        </>
         // <View style={{ marginTop: "10%", width: "100%" }}>
         //     {/* <SliderBox
         //         images={images}
@@ -48,7 +58,7 @@ export default function TextCarousal() {
         //     />
 
         // </View>
-        <></>
+
     );
 }
 // const styles = StyleSheet.create({
@@ -72,3 +82,34 @@ export default function TextCarousal() {
 //         bottom: 15
 //     }
 // });
+
+const CustomView1 = () => (
+    <View style={[styles.customView, { backgroundColor: 'lightblue' }]}>
+        <Text>Custom View 1</Text>
+    </View>
+);
+
+const CustomView2 = () => (
+    <View style={[styles.customView, { backgroundColor: 'lightgreen' }]}>
+        <Text>Custom View 2</Text>
+    </View>
+);
+
+const CustomView3 = () => (
+    <View style={[styles.customView, { backgroundColor: 'lightcoral' }]}>
+        <Text>Custom View 3</Text>
+    </View>
+);
+
+const styles = StyleSheet.create({
+    viewContainer: {
+        marginRight: 16,
+    },
+    customView: {
+        width: 200,
+        height: 150,
+        borderRadius: 8,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+});

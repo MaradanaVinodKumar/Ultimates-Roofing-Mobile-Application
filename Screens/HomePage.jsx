@@ -11,7 +11,7 @@ import {
 
 import { Video } from "expo-av";
 
-import { MaterialIcons } from "@expo/vector-icons";
+import Header from "../Screens/Header";
 import ourService1 from "../assets/ServicePageImages/our-service1.jpg";
 import ourService2 from "../assets/ServicePageImages/our-service2.jpg";
 import ourService3 from "../assets/ServicePageImages/our-service3.jpg";
@@ -26,6 +26,9 @@ import MyCarousel from "../Components/MyCarousel";
 import Footer from "../Components/Footer";
 import Agreements from "../Components/Agreements";
 import Icon from "@expo/vector-icons/Ionicons";
+import SidePointNavigation from "../Components/SidePointNavigation";
+import TextCarousal from "../Components/TextCarousal";
+
 // import TextCarousal from "../Components/TextCarousal";
 
 
@@ -77,21 +80,11 @@ export default function HomePage() {
   //   }
   // };
   return (
-    <SafeAreaView>
-      <View style={styles.sidePoint}>
-        <TouchableOpacity>
-          <MaterialIcons
-            name="request-quote"
-            size={34}
-            color="white"
-            onPress={() => {
-              navigation.navigate("quote");
-            }}
-          />
-        </TouchableOpacity>
-      </View>
 
-      <ScrollView style={{ height: 'auto' }}>
+    <SafeAreaView>
+      <Header button={true} />
+      {/* <SidePointNavigation /> */}
+      <ScrollView style={{ height: 'auto', }}>
         <SafeAreaView>
           <View>
             <Image source={sample} style={styles.backgroundVideoContainer} />
@@ -149,150 +142,157 @@ export default function HomePage() {
             </Text>
           </View>
         </View>
+        <SafeAreaView>
+          {/*first card */}
+          <View style={styles.servicesCards}>
+            <View
+              // style={{
+              //   flex: 1,
+              //   justifyContent: "center", // Centers vertically
+              //   alignItems: "center", // Centers horizontally
+              // }}
 
-        {/*first card */}
-        <View style={styles.servicesCards}>
-          <View
-          // style={{
-          //   // flex: 1,
-          //   // justifyContent: "center", // Centers vertically
-          //   // alignItems: "center", // Centers horizontally
-          // }}
-          >
-            <Image source={ourService1} style={styles.ourImage} />
+              style={styles.ourImageBackground}
+            >
+              <Image source={ourService1} style={styles.ourImage} />
+            </View>
+            <Text
+              style={styles.servicesCardsHeading}
+            >
+              Home Roofing
+            </Text>
+            <Text
+              style={styles.servicesCardsText}
+            >Enhance your home's protection with expert residential roofing solutions, blending durability and aesthetic appeal seamlessly.
+            </Text>
+
+            <TouchableOpacity
+              style={styles.buttonContainer}
+              onPress={() => navigation.navigate("Residential")}
+            >
+              <Text style={styles.buttonContainerText}>Learn More</Text>
+            </TouchableOpacity>
+
           </View>
-          <Text
-            style={styles.servicesCardsHeading}
-          >
-            Home Roofing
-          </Text>
-          <Text
-            style={styles.servicesCardsText}
-          >Enhance your home's protection with expert residential roofing solutions, blending durability and aesthetic appeal seamlessly.
-          </Text>
-
-          <TouchableOpacity
-            style={styles.buttonContainer}
-            onPress={() => navigation.navigate("Residential")}
-          >
-            <Text style={styles.buttonContainerText}>Learn More</Text>
-          </TouchableOpacity>
-
-        </View>
-        {/*second card */}
-        <View style={styles.servicesCards}>
-          <View
-          // style={{
-          //   flex: 1,
-          //   justifyContent: "center", // Centers vertically
-          //   alignItems: "center", // Centers horizontally
-          // }}
-          >
-            <Image source={ourService2} style={styles.ourImage} />
+          {/*second card */}
+          <View style={styles.servicesCards}>
+            <View
+              // style={{
+              //   flex: 1,
+              //   justifyContent: "center", // Centers vertically
+              //   alignItems: "center", // Centers horizontally
+              // }}
+              style={styles.ourImageBackground}
+            >
+              <Image source={ourService2} style={styles.ourImage} />
+            </View>
+            <Text
+              style={styles.servicesCardsHeading}
+            >
+              Commercial Roofing
+            </Text>
+            <Text
+              style={styles.servicesCardsText}
+            >
+              Elevate your business infrastructure with our top-tier commercial roofing services, combining reliability and performance for lasting excellence.
+            </Text>
+            <TouchableOpacity
+              style={styles.buttonContainer}
+              onPress={() => navigation.navigate("Commercial")}
+            >
+              <Text style={styles.buttonContainerText}>Learn More</Text>
+            </TouchableOpacity>
           </View>
-          <Text
-            style={styles.servicesCardsHeading}
-          >
-            Commercial Roofing
-          </Text>
-          <Text
-            style={styles.servicesCardsText}
-          >
-            Elevate your business infrastructure with our top-tier commercial roofing services, combining reliability and performance for lasting excellence.
-          </Text>
-          <TouchableOpacity
-            style={styles.buttonContainer}
-            onPress={() => navigation.navigate("Commercial")}
-          >
-            <Text style={styles.buttonContainerText}>Learn More</Text>
-          </TouchableOpacity>
-        </View>
-        {/*3rd card */}
-        <View style={styles.servicesCards}>
-          <View
-          // style={{
-          //   flex: 1,
-          //   justifyContent: "center", // Centers vertically
-          //   alignItems: "center", // Centers horizontally
-          // }}
-          >
-            <Image source={ourService3} style={styles.ourImage} />
+          {/*3rd card */}
+          <View style={styles.servicesCards}>
+            <View
+              // style={{
+              //   flex: 1,
+              //   justifyContent: "center", // Centers vertically
+              //   alignItems: "center", // Centers horizontally
+              // }}
+              style={styles.ourImageBackground}
+            >
+              <Image source={ourService3} style={styles.ourImage} />
+            </View>
+            <Text
+              style={styles.servicesCardsHeading}
+            >
+              Siding Enhancements
+            </Text>
+            <Text
+              style={styles.servicesCardsText}
+            >
+              Transform your property's exterior with our premium siding options, offering a perfect fusion of style, durability, and low maintenance.
+            </Text>
+            <TouchableOpacity
+              style={styles.buttonContainer}
+              onPress={() => navigation.navigate("Siding")}
+            >
+              <Text style={styles.buttonContainerText}>Learn More</Text>
+            </TouchableOpacity>
           </View>
-          <Text
-            style={styles.servicesCardsHeading}
-          >
-            Siding Enhancements
-          </Text>
-          <Text
-            style={styles.servicesCardsText}
-          >
-            Transform your property's exterior with our premium siding options, offering a perfect fusion of style, durability, and low maintenance.
-          </Text>
-          <TouchableOpacity
-            style={styles.buttonContainer}
-            onPress={() => navigation.navigate("Siding")}
-          >
-            <Text style={styles.buttonContainerText}>Learn More</Text>
-          </TouchableOpacity>
-        </View>
-        {/*4th card*/}
-        <View style={styles.servicesCards}>
-          <View
-          // style={{
-          //   // flex: 1,
-          //   // justifyContent: "center", // Centers vertically
-          //   // alignItems: "center", // Centers horizontally
-          // }}
-          >
-            <Image source={ourService4} style={styles.ourImage} />
+          {/*4th card*/}
+          <View style={styles.servicesCards}>
+            <View
+              // style={{
+              //   // flex: 1,
+              //   // justifyContent: "center", // Centers vertically
+              //   // alignItems: "center", // Centers horizontally
+              // }}
+              style={styles.ourImageBackground}
+            >
+              <Image source={ourService4} style={styles.ourImage} />
+            </View>
+            <Text
+              style={styles.servicesCardsHeading}
+            >
+              Gutter Systems
+            </Text>
+            <Text
+              style={styles.servicesCardsText}
+            >Transform your property's exterior with our premium siding options, offering a perfect fusion of style, durability, and low maintenance.
+            </Text>
+
+            <TouchableOpacity
+              style={styles.buttonContainer}
+              onPress={() => navigation.navigate("Gutters")}
+            >
+              <Text style={styles.buttonContainerText}>Learn More</Text>
+            </TouchableOpacity>
+
           </View>
-          <Text
-            style={styles.servicesCardsHeading}
-          >
-            Gutter Systems
-          </Text>
-          <Text
-            style={styles.servicesCardsText}
-          >Transform your property's exterior with our premium siding options, offering a perfect fusion of style, durability, and low maintenance.
-          </Text>
+          {/*5th card */}
+          <View style={styles.servicesCards}>
+            <View
+              // style={{
+              //   // flex: 1,
+              //   // justifyContent: "center", // Centers vertically
+              //   // alignItems: "center", // Centers horizontally
+              // }}
+              style={styles.ourImageBackground}
+            >
+              <Image source={ourService5} style={styles.ourImage} />
+            </View>
+            <Text
+              style={styles.servicesCardsHeading}
+            >
+              Window Services
+            </Text>
+            <Text
+              style={styles.servicesCardsText}
+            >Immerse your spaces in natural light and energy efficiency with our high-quality windows, designed for both beauty and functional brilliance.
+            </Text>
 
-          <TouchableOpacity
-            style={styles.buttonContainer}
-            onPress={() => navigation.navigate("Gutters")}
-          >
-            <Text style={styles.buttonContainerText}>Learn More</Text>
-          </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.buttonContainer}
+              onPress={() => navigation.navigate("Windows")}
+            >
+              <Text style={styles.buttonContainerText}>Learn More</Text>
+            </TouchableOpacity>
 
-        </View>
-        {/*5th card */}
-        <View style={styles.servicesCards}>
-          <View
-          // style={{
-          //   // flex: 1,
-          //   // justifyContent: "center", // Centers vertically
-          //   // alignItems: "center", // Centers horizontally
-          // }}
-          >
-            <Image source={ourService5} style={styles.ourImage} />
           </View>
-          <Text
-            style={styles.servicesCardsHeading}
-          >
-            Window Services
-          </Text>
-          <Text
-            style={styles.servicesCardsText}
-          >Immerse your spaces in natural light and energy efficiency with our high-quality windows, designed for both beauty and functional brilliance.
-          </Text>
-
-          <TouchableOpacity
-            style={styles.buttonContainer}
-            onPress={() => navigation.navigate("Windows")}
-          >
-            <Text style={styles.buttonContainerText}>Learn More</Text>
-          </TouchableOpacity>
-
-        </View>
+        </SafeAreaView>
         {/* <TouchableOpacity
           style={{
             backgroundColor: "#B22335",
@@ -389,13 +389,17 @@ const styles = StyleSheet.create({
     width: "80%",
     textAlign: "center",
   },
+  ourImageBackground: {
+    alignContent: 'center',
+    width: "100%",
+  },
   ourImage: {
     width: "100%",
-    height: "26%",
-    paddingVertical: "35%",
+    // height: 26,
+    height: '26%',
+    paddingVertical: "26%",
   },
   buttonContainer: {
-
     width: '25%',
     alignItems: "center",
     justifyContent: "center",
@@ -416,7 +420,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-
   headerContainer: {
     padding: 16,
     backgroundColor: "transparent",
@@ -439,7 +442,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "white",
     width: "84%",
-
   },
   sub_text: {
     fontSize: 20,
@@ -447,18 +449,7 @@ const styles = StyleSheet.create({
     width: "79%",
     textAlign: "justify",
   },
-  sidePoint: {
-    height: 60,
-    width: 50,
-    backgroundColor: "black",
-    top: 380,
-    right: 0,
-    position: "absolute",
-    zIndex: 1,
-    borderTopLeftRadius: 30,
-    borderBottomLeftRadius: 30,
-    padding: 11,
-  },
+
   servicesCards: {
     marginVertical: '3%',
     marginHorizontal: '5%',
@@ -469,7 +460,8 @@ const styles = StyleSheet.create({
     shadowOffset: { width: -2, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
-    height: '6.5%'
+    height: 350,
+    // height: '6.6%',
   },
   servicesCardsHeading: {
     fontWeight: "500", fontSize: 22, paddingHorizontal: "6%", marginVertical: 10
@@ -486,9 +478,9 @@ const styles = StyleSheet.create({
   ourServiceBackground: {
 
     marginHorizontal: '6%',
+    marginVertical: '8%'
 
-  }
-
+  },
   // rotateText: {
   //   transform: [{ rotate: '0deg' }], // Adjust the angle as needed
   //   fontSize: 10,

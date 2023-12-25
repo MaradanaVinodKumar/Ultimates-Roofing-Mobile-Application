@@ -18,24 +18,16 @@ import { useNavigation } from "@react-navigation/native";
 import roof from "../assets/AboutPageImages/roof.jpg";
 import MyCarousel from "../Components/MyCarousel";
 import Footer from "../Components/Footer";
+import SidePointNavigation from "../Components/SidePointNavigation";
+import Header from "../Screens/Header";
 
 export default function ServicePage() {
   const navigation = useNavigation();
   return (
     <>
-      <View style={styles.sidePoint}>
-        <TouchableOpacity>
-          <MaterialIcons
-            name="request-quote"
-            size={34}
-            color="white"
-            onPress={() => {
-              navigation.navigate("quote");
-            }}
-          />
-        </TouchableOpacity>
-      </View>
 
+      {/* <SidePointNavigation /> */}
+      <Header button={true} />
       <ScrollView style={styles.viewStyle}>
         <View style={{ flex: 1 }}>
           <Text style={styles.textAboveImage}>Ultimates ROOFING & SIDING</Text>
@@ -154,7 +146,7 @@ export default function ServicePage() {
           <Text style={styles.buttonText}>WINDOWS</Text>
         </TouchableOpacity>
         <MyCarousel />
-        <View style={{ backgroundColor: "red", height: 170, marginTop: 40 }}>
+        <View style={{ backgroundColor: "#B22335", height: 170, marginTop: 40 }}>
           <Text
             style={{
               color: "white",
@@ -195,7 +187,7 @@ export default function ServicePage() {
         >
           <Text
             style={{
-              color: "red",
+              color: "#B22335",
               fontSize: 16,
               fontWeight: "bold",
               alignItems: "center",
@@ -222,7 +214,7 @@ const styles = StyleSheet.create({
     paddingVertical: "35%",
   },
   buttonContainer: {
-    backgroundColor: "red",
+    backgroundColor: "#B22335",
     width: "90%",
     padding: 6,
 
@@ -233,18 +225,6 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 16,
     fontWeight: "bold",
-  },
-  sidePoint: {
-    height: 60,
-    width: 50,
-    backgroundColor: "black",
-    top: 380,
-    right: 0,
-    position: "absolute",
-    zIndex: 1,
-    borderTopLeftRadius: 30,
-    borderBottomLeftRadius: 30,
-    padding: 11,
   },
   roof: {
     height: 200,

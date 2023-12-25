@@ -15,7 +15,7 @@ export default function PromiseText() {
         <Text
           style={{ fontSize: 15, marginHorizontal: "5%", marginVertical: "3%" }}
         >
-          <Text style={{ color: "red", fontWeight: "bold" }}>
+          <Text style={{ color: "#B22335", fontWeight: "bold" }}>
             Install the best!
           </Text>
           We install only the best products in the business. The Ultimates
@@ -26,7 +26,7 @@ export default function PromiseText() {
         <Text
           style={{ fontSize: 15, marginHorizontal: "5%", marginVertical: "3%" }}
         >
-          <Text style={{ color: "red", fontWeight: "bold" }}>
+          <Text style={{ color: "#B22335", fontWeight: "bold" }}>
             Make the experience for thr homeowner a positive one.
           </Text>
           We try to make the experience as least intrusive on your family as
@@ -38,7 +38,7 @@ export default function PromiseText() {
         <Text
           style={{ fontSize: 15, marginHorizontal: "5%", marginVertical: "3%" }}
         >
-          <Text style={{ color: "red", fontWeight: "bold" }}>
+          <Text style={{ color: "#B22335", fontWeight: "bold" }}>
             Clean-up is critical.
           </Text>
           When we leave the job – it should be in better condition than when we

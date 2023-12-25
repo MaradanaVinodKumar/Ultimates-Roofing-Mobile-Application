@@ -13,23 +13,16 @@ import { useNavigation } from "@react-navigation/native";
 import { ScrollView } from "react-native";
 import roof from "../assets/AboutPageImages/roof.jpg";
 import Footer from "../Components/Footer";
+import SidePointNavigation from "../Components/SidePointNavigation";
 
+import Header from "../Screens/Header";
 export default function AboutPage() {
   const navigation = useNavigation();
   return (
     <SafeAreaView>
-      <View style={styles.sidePoint}>
-        <TouchableOpacity>
-          <MaterialIcons
-            name="request-quote"
-            size={34}
-            color="white"
-            onPress={() => {
-              navigation.navigate("quote");
-            }}
-          />
-        </TouchableOpacity>
-      </View>
+      <Header button={true} />
+      {/* <SidePointNavigation /> */}
+
       <ScrollView>
         <View style={{ flex: 1 }}>
           <Text style={styles.textAboveImage}>Ultimates ROOFING & SIDING</Text>
@@ -81,18 +74,6 @@ const styles = StyleSheet.create({
     width: "90%",
     height: "23%",
     paddingVertical: "35%",
-  },
-  sidePoint: {
-    height: 60,
-    width: 50,
-    backgroundColor: "black",
-    top: 380,
-    right: 0,
-    position: "absolute",
-    zIndex: 1,
-    borderTopLeftRadius: 30,
-    borderBottomLeftRadius: 30,
-    padding: 11,
   },
   roof: {
     height: 200,

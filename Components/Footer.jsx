@@ -23,7 +23,7 @@ export default function Footer() {
       <Text style={{ fontSize: 20, fontWeight: "bold", marginTop: 20 }}>
         SITE NAVIGATION
       </Text>
-      <Text style={{ fontSize: 20, fontWeight: "bold", color: "red" }}>
+      <Text style={{ fontSize: 20, fontWeight: "bold", color: "#B22335" }}>
         -----
       </Text>
       <View>
@@ -38,7 +38,7 @@ export default function Footer() {
       <Text style={{ fontSize: 20, fontWeight: "bold", marginTop: 20 }}>
         SERVICES
       </Text>
-      <Text style={{ fontSize: 20, fontWeight: "bold", color: "red" }}>
+      <Text style={{ fontSize: 20, fontWeight: "bold", color: "#B22335" }}>
         -----
       </Text>
       <View>
@@ -51,7 +51,7 @@ export default function Footer() {
       <Text style={{ fontSize: 20, fontWeight: "bold", marginTop: 20 }}>
         CONTACT INFO
       </Text>
-      <Text style={{ fontSize: 20, fontWeight: "bold", color: "red" }}>
+      <Text style={{ fontSize: 20, fontWeight: "bold", color: "#B22335" }}>
         -----
       </Text>
       <View>
